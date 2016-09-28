@@ -4,19 +4,24 @@
 <h1>dashboard</h1>
 <div>
     ID: <%= current_user.id %> <br />
+    data: <%= current_user.data %>;
 
     <div class="rawencryptedjson">
         <!-- <%= current_user.data %> <br /> -->
-        <!-- <%= @data %> <br /> -->
+        <p>moredata </p><%= @moredata %> <br />
+    </div>
+
+    <div id="userkey">
+    66859b7ade4e68cb65041b88a7ad5214df71cdcfa27dff2efcc80a81e9ba5fa0
     </div>
 </div>
 
 <div class="upload">
     <input type="file" id="uploadFile">
 </div>
-
 <br />
 <div>
     <h3>Upload Preview</h3>
     <p id="uploadPreview"></p>
+    <input type="button" value="Upload to Server" id="encryptAndUploadToServer" />
 </div>

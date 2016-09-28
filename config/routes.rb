@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy", as: "logout" #GET or DELETE request?
   get "/dashboard", to: "sessions#dashboard", as: "dashboard"
   get "/sessions/api", to: "sessions#api"
+  post "/users/save_data", to: "users#save_data", as: "save"
 
   resources :users
   resources :sessions

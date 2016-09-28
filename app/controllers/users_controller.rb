@@ -15,9 +15,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def save_data
+    encoutputstring = params.first[0]
+    encoded_string = Base64.encode64(encoutputstring)
+    current_user.data = encoded_string
+    # myhash = eval(encoutputstring)
+    # current_user.data = myhash[:ct]
+    # current_user.iv = myhash[:iv]
+    current_user.save
+    # redirect_to '/dashboard'
+  end
+
   private
 
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation, :data)
     end
 end
