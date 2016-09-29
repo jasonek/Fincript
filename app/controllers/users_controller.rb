@@ -17,8 +17,8 @@ class UsersController < ApplicationController
 
   def save_data
     encoutputstring = params.first[0]
-    encoded_string = Base64.encode64(encoutputstring)
-    current_user.data = encoded_string
+    # encoded_string = Base64.encode64(encoutputstring)
+    current_user.data = encoutputstring
     # myhash = eval(encoutputstring)
     # current_user.data = myhash[:ct]
     # current_user.iv = myhash[:iv]

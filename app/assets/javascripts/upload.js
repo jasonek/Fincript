@@ -19,24 +19,26 @@ $(function() {
     });
 
     $("#encryptAndUploadToServer").click(function() {
-        var key = $("#userkey").text();
+        var encryptionKey = $("body").data("cryptoKey");
+        console.log(encryptionKey);
+
         response = $('#uploadPreview').text();
-        // console.log(response);
-        // var key = "supersecret"
-        console.log(key);
-        var encrypted_response = sjcl.encrypt(key, response);
+        // console.log(key);
+        var encrypted_response = sjcl.encrypt(encryptionKey, response);
         console.log("encrypted version:");
         console.log(encrypted_response);
-        // console.log("decrypted version****");
-        // var decrypted = sjcl.decrypt(key, encrypted_response);
-        // console.log(decrypted);
-        // console.log('success');
+        var encoded_resp = btoa(encrypted_response);
+        console.log("encoded version:");
+        console.log(encoded_resp);
+
         console.log("uploaded!");
+
+
 
         $.ajax({
             type: "POST",
             url: "/users/save_data",
-            data: encrypted_response,
+            data: encoded_resp,
             success: function() {
                 console.log('successsssss!');
             },

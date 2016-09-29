@@ -1,27 +1,29 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-	<title>DashboardWOW</title>
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title>DashboardWOW</title>
 
-<h1>dashboard</h1>
-<div>
-    ID: <%= current_user.id %> <br />
-    data: <%= current_user.data %>;
+        <h1>dashboard</h1>
+        <div>
+            <div>
+                <!-- 393a66275c5c2d4c6c49373259 -->
+                <div>
+                    <input type="password" placeholder="Enter decryption password" id="userkey"/>
+                </div>
+                <div>
+                    <input type="button" value="Decrypt" id="decryptButton"/>
+                </div>
+            </div>
+        </div>
+        <div>
 
-    <div class="rawencryptedjson">
-        <!-- <%= current_user.data %> <br /> -->
-        <p>moredata </p><%= @moredata %> <br />
-    </div>
+        </div>
 
-    <div id="userkey">
-    66859b7ade4e68cb65041b88a7ad5214df71cdcfa27dff2efcc80a81e9ba5fa0
-    </div>
-</div>
-
-<div class="upload">
-    <input type="file" id="uploadFile">
-</div>
-<br />
-<div>
-    <h3>Upload Preview</h3>
-    <p id="uploadPreview"></p>
-    <input type="button" value="Upload to Server" id="encryptAndUploadToServer" />
-</div>
+        <div class="upload">
+            <input type="file" id="uploadFile">
+        </div>
+        <br/>
+        <div>
+            <h3>Upload Preview</h3>
+            <p id="uploadPreview"></p>
+            <input type="button" value="Upload to Server" id="encryptAndUploadToServer"/>
+        </div>
