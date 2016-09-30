@@ -23,16 +23,10 @@ $(function() {
         console.log(encryptionKey);
 
         response = $('#uploadPreview').text();
-        // console.log(key);
         var encrypted_response = sjcl.encrypt(encryptionKey, response);
-        console.log("encrypted version:");
-        console.log(encrypted_response);
+        console.log("encrypted version: " + encrypted_response);
         var encoded_resp = btoa(encrypted_response);
-        console.log("encoded version:");
-        console.log(encoded_resp);
-
-        console.log("uploaded!");
-
+        console.log("encoded version: " + encoded_resp);
 
 
         $.ajax({
@@ -40,7 +34,7 @@ $(function() {
             url: "/users/save_data",
             data: encoded_resp,
             success: function() {
-                console.log('successsssss!');
+                console.log('Uploaded successfully.');
             },
             error: handleError
         });
