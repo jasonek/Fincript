@@ -8,16 +8,32 @@ var randomScalingFactor = function() {
   };
   var labells = ["January", "February", "March", "April", "May", "June", "July", "August"];
 
+  var dateSpecificPrincipal = function(i) {
+    var dateArray = getDataSet().schedule;
+    var starting_month = findTodayInArray();
+    // console.log(dateArray[starting_month+i]);
+    return dateArray[starting_month+i][1];
+    // var intrst = dateArray[starting_month+i][2];
+  }
+
+  var dateSpecificInterest = function(i) {
+    var dateArray = getDataSet().schedule;
+    var starting_month = findTodayInArray();
+    // console.log(dateArray[starting_month+i]);
+    // var princ = dateArray[starting_month+i][1];
+    return dateArray[starting_month+i][2];
+  }
+
   var barChartData = {
       labels: labells,
       datasets: [{
-          label: 'Dataset 1',
+          label: 'Principal',
           backgroundColor: "rgba(220,220,220,0.5)",
-          data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(),randomScalingFactor()]
+          data: [dateSpecificPrincipal(0), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(),randomScalingFactor()]
       }, {
-          label: 'Dataset 2',
+          label: 'Interest',
           backgroundColor: "rgba(151,187,205,0.5)",
-          data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+          data: [dateSpecificInterest(0), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
       }]
   };
   window.onload = function() {

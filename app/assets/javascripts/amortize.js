@@ -7,21 +7,37 @@ function pmt(rate,nper,pv) {
 
     return pmt;
 };
+
+function makeDateArray(){
+    var terminal_date = $('#terminal_date').val();
+    var last_date = moment(terminal_date);
+    var mydate = moment(terminal_date);
+    var starting_date = mydate.subtract(10,'years').format('YYYY MM DD');
+
+    var dateArr = [];
+    var current_date = moment(starting_date);
+    while (current_date <= last_date) {
+        dateArr.push(moment(current_date).format('YYYY MM DD'));
+        current_date = moment(current_date).add(1,'months')
+    }
+    return dateArr;
+};
+
 function computeSchedule(principal, interest_rate, compounds_per_year, years, payment) {
     var schedule = [];
     var remaining = principal;
     var number_of_payments = compounds_per_year * years;
+    var dates = makeDateArray();
 
     for (var i=0; i<=number_of_payments; i++) {
         var interest = remaining * (interest_rate/100/compounds_per_year);
         var principle = (payment-interest);
-        var row = [i, principle>0?(principle<payment?principle:payment):0, interest>0?interest:0, remaining>0?remaining:0];
+        var row = [i, principle>0?(principle<payment?principle:payment):0, interest>0?interest:0, remaining>0?remaining:0, dates[i]];
         schedule.push(row);
         remaining -= principle
     }
-
     return schedule;
-}
+};
 
 function getDataSet() {
     var output = {};
@@ -39,19 +55,4 @@ function getDataSet() {
                                        years,
                                        payment );
     return output;
-}
-
-function makeDateArray(){
-    var terminal_date = $('#terminal_date').val();
-    var terminal_date = moment(terminal_date);
-    var mydate = moment(terminal_date);
-    var starting_date = mydate.subtract(10,'years').format('YYYY-MM-DD');
-
-    var dateArr = [];
-    var current_date = moment(starting_date);
-    while (current_date <= terminal_date) {
-        dateArr.push(moment(current_date).format('YYYY-MM-DD'));
-        current_date = moment(current_date).add(1,'months')
-    }
-    return dateArr;
-}
+};
