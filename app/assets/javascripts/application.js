@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+
+//= require moment.min.js
+//= require sjcl.js
+//= require sha256.js
+//= require math.js
+//= require loanSchedule.js
+
 //= require_tree .
