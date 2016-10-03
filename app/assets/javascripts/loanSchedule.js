@@ -8,11 +8,11 @@ function pmt(rate,nper,pv) {
     return pmt;
 };
 
-function makeDateArray(){
+function makeDateArray(loan_duration){
     var terminal_date = $('#terminal_date').val();
     var last_date = moment(terminal_date);
     var mydate = moment(terminal_date);
-    var starting_date = mydate.subtract(10,'years').format('YYYY MM DD');
+    var starting_date = mydate.subtract(loan_duration,'years').format('YYYY MM DD');
 
     var dateArr = [];
     var current_date = moment(starting_date);
@@ -23,11 +23,11 @@ function makeDateArray(){
     return dateArr;
 };
 
-function computeSchedule(principal, interest_rate, compounds_per_year, years, payment) {
+function computeSchedule(principal, interest_rate, compounds_per_year, loan_duration, payment) {
     var schedule = [];
     var remaining = principal;
-    var number_of_payments = compounds_per_year * years;
-    var dates = makeDateArray();
+    var number_of_payments = compounds_per_year * loan_duration;
+    var dates = makeDateArray(loan_duration);
 
     for (var i=0; i<=number_of_payments; i++) {
         var interest = remaining * (interest_rate/100/compounds_per_year);

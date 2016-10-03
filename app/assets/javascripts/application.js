@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 
+//= require bootstrap.min
 //= require moment.min.js
 //= require sjcl.js
 //= require sha256.js
