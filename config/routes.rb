@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/", to: "users#index", as: "home"
   get "/register", to: "users#new", as: "register"
   get "/login", to: "sessions#new", as: "login"
   get "/logout", to: "sessions#destroy", as: "logout" #GET or DELETE request?
@@ -9,5 +10,5 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
-  root "users#new"
+  root "users#index"
 end

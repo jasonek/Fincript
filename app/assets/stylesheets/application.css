@@ -14,3 +14,61 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color: #EFF8FA;
+}
+
+@media only screen and (max-width: 775px) {
+    #WelcomeUser {
+        display: none;
+    }
+}
+
+#WelcomeUser {
+    float: right;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 1.3em;
+}
+#welcomeUserName {
+    color: #DBFFFD;
+}
+
+#modalbutton {
+    float: right;
+    margin-top: -3.3em;
+    margin-right: 1em;
+}
+
+#passwordWarning {
+    color: red;
+}
+.form-control {
+    width: 70%;
+}
+
+.form-list {
+    margin-top: 2em;
+}
+
+.navbar-default {
+    background-color: #535658;
+    color: #ff0000;
+}
+
+li.navbar-text a {
+    color: white;
+    border-radius: 6px;
+    font-size: 1.2em;
+}
+
+li.navbar-text> a:hover, li.navbar-text> a:focus {
+    background-color: #2bc0b3;
+}
+
+#encryptAndUploadToServer, #modalbutton {
+    background-color: #2bc0b3;
+    border-color: #2bc0b3;
+}

@@ -27,6 +27,7 @@ $(function() {
                 console.log(decrypted);
                 $("body").data("jsondata", decrypted);
                 dashboardLoad();
+                updateChart();
             };
 
             function handleError(error) {

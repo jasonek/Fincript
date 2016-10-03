@@ -16,7 +16,7 @@ function findTodayInArray(dateArray) {
 
 
 
-var labells = ["January", "February", "March", "April", "May", "June", "July", "August"];
+var labells = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var zeroes_data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 var chartDataPrincipal = function() {
@@ -53,6 +53,6 @@ var chartDataInterest = function() {
 };
 
 
-$(document).ready(function() {
+$(document).on('ready page:change', function() {
     updateChart();
 });

@@ -12,6 +12,6 @@
         $('#principal').val(loan1_principal);
         $('#interest_rate').val(loan1_interest_rate);
         $('#compounds_per_year').val(loan1_compounds_per_year);
-        $('#years').val(loan1_years);
+        $('#loan_years').val(loan1_years);
         $('#terminal_date').val(loan1_maturity_date);
     }

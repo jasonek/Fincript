@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   # before_action :authorize, only: [:dashboard]
+  def index
+  end
 
   def new
     @user = User.new

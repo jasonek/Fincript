@@ -4,11 +4,11 @@ function updateChart() {
         labels: labells,
         datasets: [{
             label: 'Principal',
-            backgroundColor: "rgba(220,220,220,0.5)",
+            backgroundColor: "#18BBEF",
             data: chartDataPrincipal()
         }, {
             label: 'Interest',
-            backgroundColor: "rgba(151,187,205,0.5)",
+            backgroundColor: "#F39333",
             data: chartDataInterest()
         }]
     };
@@ -19,7 +19,7 @@ function updateChart() {
         options: {
             title: {
                 display: true,
-                text: "Chart.js Bar Chart - Stacked"
+                text: "Monthly Loan Interest and Principal"
             },
             tooltips: {
                 mode: 'label'
@@ -41,4 +41,21 @@ $(document).ready( function() {
     $('#principal').on('change', function(event) {
         updateChart();
     });
+
+    $('#interest_rate').on('change', function(event) {
+        updateChart();
+    });
+
+    $('#compounds_per_year').on('change', function(event) {
+        updateChart();
+    });
+
+    $('#loan_years').on('change', function(event) {
+        updateChart();
+    });
+
+    $('#terminal_date').on('change', function(event) {
+        updateChart();
+    });
+
 });

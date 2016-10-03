@@ -19,7 +19,8 @@ $(function() {
     });
 
     $("#encryptAndUploadToServer").click(function() {
-        var encryptionKey = $("body").data("cryptoKey");
+        // var encryptionKey = $("body").data("cryptoKey");
+        var encryptionKey = $('#userkeyEncrypt').val();
         console.log(encryptionKey);
 
         response = $('#uploadPreview').text();
@@ -27,7 +28,6 @@ $(function() {
         console.log("encrypted version: " + encrypted_response);
         var encoded_resp = btoa(encrypted_response);
         console.log("encoded version: " + encoded_resp);
-
 
         $.ajax({
             type: "POST",

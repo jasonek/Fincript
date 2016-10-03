@@ -44,7 +44,7 @@ function getDataSet() {
     var loanAmount = output.loanAmount = parseFloat( $('#principal').val() );
     var interestRate = output.interestRate = parseFloat( $('#interest_rate').val() );
     var compoundsPerYear = output.compoundsPerYear = parseInt( $('#compounds_per_year').val() );
-    var years = output.years = parseInt( $('#years').val() );
+    var years = output.years = parseInt( $('#loan_years').val() );
     var numberOfPayments = output.numberOfPayments = compoundsPerYear * years;
 
     var payment = output.payment = pmt(interestRate/100/compoundsPerYear, numberOfPayments, -loanAmount);
