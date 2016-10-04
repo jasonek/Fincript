@@ -1,13 +1,13 @@
 $(function() {
 
     var fileInput = document.getElementById('uploadFile');
+    var dataUploadedByUser;
 
     fileInput.addEventListener('change', function(e) {
         var file = fileInput.files[0];
         var textType = /text.*/;
 
         if (file.type.match(textType)) {
-
             var reader = new FileReader();
             reader.onload = function(e) {
                 $('#uploadPreview').append(reader.result);
@@ -22,8 +22,7 @@ $(function() {
         // var encryptionKey = $("body").data("cryptoKey");
         var encryptionKey = $('#userkeyEncrypt').val();
         console.log(encryptionKey);
-
-        response = $('#uploadPreview').text();
+        var response = $('#uploadPreview').text();
         var encrypted_response = sjcl.encrypt(encryptionKey, response);
         console.log("encrypted version: " + encrypted_response);
         var encoded_resp = btoa(encrypted_response);

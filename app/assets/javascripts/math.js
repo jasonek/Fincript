@@ -7,20 +7,19 @@
 
 function calcMonthlyPayment(principal, interest_rate, compounds_per_year, years) {
     var P = principal;
-    var r = interest_rate*100;
+    var r = interest_rate/100;
     var n = compounds_per_year;
     var t = years;
-    function expon(x,y){ return Math.pow(x,y);};
+    var expon = function(x,y){ return Math.pow(x,y);};
     var numerator = ((r / n) * P) ;
     var denominator = expon((1 + (r / n)),(-1 * n * t));
-    var denominator = 1 - denominator;
 
-    return numerator/denominator;
+    return numerator/(1-denominator);
     };
 
 function calcTotalInterestToPay(principal, interest_rate, compounds_per_year, years) {
     var P = principal;
-    var r = interest_rate*100;
+    var r = interest_rate/100;
     var n = compounds_per_year;
     var t = years;
     function expon(x,y){ return Math.pow(x,y);};
@@ -29,4 +28,15 @@ function calcTotalInterestToPay(principal, interest_rate, compounds_per_year, ye
     var denominator = 1 - denominator;
 
     return (numerator * n * t )/denominator;
+}
+
+function basicMath() {
+    var mnthlypmt = calcMonthlyPayment($('#principal').val(),$('#interest_rate').val(),$('#compounds_per_year').val(),$('#loan_years').val());
+    var mnthlypmt = mnthlypmt.toFixed(2);
+    $("#monthly_payment").text("$"+mnthlypmt);
+
+    var totalIntToPay = calcTotalInterestToPay($('#principal').val(),$('#interest_rate').val(),$('#compounds_per_year').val(),$('#loan_years').val());
+    var principal = $('#principal').val();
+    var display_int = (totalIntToPay-principal).toFixed(2)
+    $("#total_interest_to_pay").text("$"+display_int);
 }

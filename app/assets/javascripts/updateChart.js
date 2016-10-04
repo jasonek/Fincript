@@ -40,22 +40,27 @@ function updateChart() {
 $(document).ready( function() {
     $('#principal').on('change', function(event) {
         updateChart();
+        basicMath();
     });
 
     $('#interest_rate').on('change', function(event) {
         updateChart();
+        basicMath();
     });
 
     $('#compounds_per_year').on('change', function(event) {
         updateChart();
+        basicMath();
     });
 
     $('#loan_years').on('change', function(event) {
         updateChart();
+        basicMath();
     });
 
     $('#terminal_date').on('change', function(event) {
         updateChart();
+        basicMath();
     });
 
 });

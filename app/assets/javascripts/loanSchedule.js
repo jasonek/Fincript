@@ -31,10 +31,12 @@ function computeSchedule(principal, interest_rate, compounds_per_year, loan_dura
 
     for (var i=0; i<=number_of_payments; i++) {
         var interest = remaining * (interest_rate/100/compounds_per_year);
-        var principle = (payment-interest);
-        var row = [i, principle>0?(principle<payment?principle:payment):0, interest>0?interest:0, remaining>0?remaining:0, dates[i]];
+        interest = interest.toFixed(2);
+        var principal = (payment-interest);
+        principal = principal.toFixed(2);
+        var row = [i, principal>0?(principal<payment?principal:payment):0, interest>0?interest:0, remaining>0?remaining:0, dates[i]];
         schedule.push(row);
-        remaining -= principle
+        remaining -= principal
     }
     return schedule;
 };

@@ -15,6 +15,11 @@
  *= require_self
  */
 
+ .col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 body {
     background-color: #EFF8FA;
 }
@@ -45,8 +50,30 @@ body {
 #passwordWarning {
     color: red;
 }
-.form-control {
+
+.snapshot_box {
+    margin: 5px;
+    max-width: 70%;
+    min-width: 10%;
+    min-height: 60px;
+    border: solid #e5e5e5 1px;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+}
+
+.snapshot_numbers {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+#chart_holder {
+    width: 90%;
+}
+.input_item {
     width: 70%;
+    margin-bottom: 20px;
 }
 
 .form-list {

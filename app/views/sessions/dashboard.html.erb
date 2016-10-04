@@ -47,7 +47,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="encryptAndUploadToServer">Send to Server</button>
+                        <button type="button" class="btn btn-primary" id="encryptAndUploadToServer" data-dismiss="modal">Send to Server</button>
                     </div>
                 </div>
             </div>
@@ -57,47 +57,69 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
-            <div id="graph">
-                <canvas id="canvas"></canvas>
+        <div class="col-lg-8">
+
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4 col-md-6">
+            <div class="center-block snapshot_box">
+            Total Interest you will pay:
+            <br/>
+            <p class="snapshot_numbers" id="total_interest_to_pay"></p>
+        </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="center-block snapshot_box">
+                Monthly Payment:
+                <br/>
+                <p class="snapshot_numbers" id="monthly_payment"></p>
             </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    </div>
+
+</div>
+<br/>
+<br/>
+<br/>
+<div class="row" id="chart_holder">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-8 col-md-6">
+        <div id="graph">
+            <canvas id="canvas"></canvas>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-list">
+    <div class="col-lg-3 col-md-6">
+        <div class="form-list">
+            <div>
+                <label>Principal:
+                </label><br/>
+                <input type="number" class="input_item" step="100" value="0" placeholder="Principal" id="principal"/>
+            </div>
+            <div>
+                <label>Interest Rate:
+                </label><br/>
+                <input type="number" class="input_item" step="0.1" value="5.0" placeholder="Interest Rate" id="interest_rate"/>
+            </div>
+            <div>
+                <label>Payments per year:
+                </label>
+                <br/>
+                <input type="number" class="input_item" step="0.1" value="12" placeholder="Compounds per year" id="compounds_per_year"/>
+            </div>
 
-                <div>
-                    <label>Principal:
-                    </label><br/>
-                    <input type="number" step="100" value="0" placeholder="Principal" id="principal"/>
-                </div>
-                <div>
-                    <label>Interest Rate:
-                    </label><br/>
-                    <input type="number" class="" step="0.1" value="5.0" placeholder="Interest Rate" id="interest_rate"/>
-                </div>
-                <div>
-                    <label>Payments per year:
-                    </label>
-                    <br/>
-                    <input type="number" class="" step="0.1" value="12" placeholder="Compounds per year" id="compounds_per_year"/>
-                </div>
+            <div>
+                <label>Length of loan (in years)</label><br/>
+                <input type="number" class="input_item" step="1.0" value="10" placeholder="Loan Length in Years" id="loan_years"/>
+            </div>
 
-                <div>
-                    <label>Length of loan (in years)</label><br/>
-                    <input type="number" class="" step="1.0" value="10" placeholder="Loan Length in Years" id="loan_years"/>
-                </div>
-
-                <div>
-                    <label>Final Payoff Date:
-                    </label><br/>
-                    <input type="date" class="" value="2020-05-25" placeholder="Final Payoff Date" id="terminal_date"/>
-                </div>
-
+            <div>
+                <label>Final Payoff Date:
+                </label><br/>
+                <input type="date" class="input_item" value="2020-05-25" placeholder="Final Payoff Date" id="terminal_date"/>
             </div>
         </div>
     </div>
-
+</div>
 </div>

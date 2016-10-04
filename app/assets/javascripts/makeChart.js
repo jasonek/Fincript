@@ -23,8 +23,8 @@ var chartDataPrincipal = function() {
     var dateArray = getDataSet().schedule;
 
     var dateSpecificPrincipal = function(i) {
-        var starting_month = findTodayInArray(dateArray);
-        return dateArray[starting_month + i][1];
+        var startingMonthIndex = findTodayInArray(dateArray);
+        return dateArray[startingMonthIndex + i][1];
     }
 
     if ($('#principal').val() === null || $('#principal').val() === "") {
@@ -53,6 +53,6 @@ var chartDataInterest = function() {
 };
 
 
-$(document).on('ready page:change', function() {
+$(document).on('ready', function() {
     updateChart();
 });
