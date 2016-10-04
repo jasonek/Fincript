@@ -21,3 +21,7 @@
 //= require loanSchedule.js
 
 //= require_tree .
+
+$('#logout').click(function(){
+  sessionStorage.clear();
+})

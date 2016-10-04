@@ -1,5 +1,6 @@
     function dashboardLoad() {
-        var jsonData = $("body").data("jsondata");
+        console.log("in dashboard load");
+        var jsonData = sessionStorage.getItem("jsondata");
         var jsonData = JSON.parse(jsonData);
         var loan1 = jsonData["loan1"];
         var loan1_name = loan1["name"];

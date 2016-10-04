@@ -15,7 +15,7 @@
  *= require_self
  */
 
- .col-centered{
+.col-centered {
     float: none;
     margin: 0 auto;
 }
@@ -37,14 +37,14 @@ body {
     text-align: center;
     margin-top: 1.3em;
 }
+
 #welcomeUserName {
     color: #DBFFFD;
 }
 
 #modalbutton {
     float: right;
-    margin-top: -3.3em;
-    margin-right: 1em;
+    margin: 1em;
 }
 
 #passwordWarning {
@@ -53,8 +53,7 @@ body {
 
 .snapshot_box {
     margin: 5px;
-    max-width: 70%;
-    min-width: 10%;
+    width: 80%;
     min-height: 60px;
     border: solid #e5e5e5 1px;
     border-radius: 8px;
@@ -71,6 +70,7 @@ body {
 #chart_holder {
     width: 90%;
 }
+
 .input_item {
     width: 70%;
     margin-bottom: 20px;
