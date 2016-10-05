@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # before_action :authorize, only: [:dashboard]
+  before_action :authorize, except: [:index, :new, :create]
+
   def index
   end
 
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id #log in new users when they register successfully
-      redirect_to root_url, notice: "Thank you for registering."
+      redirect_to dashboard_url, notice: "Upload loan data to get started."
     else
       render "new"
     end
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
     encoutputstring = params.first[0]
     current_user.data = encoutputstring
     current_user.save
+    flash.clear
   end
 
   private

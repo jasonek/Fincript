@@ -28,6 +28,11 @@
             </div>
         </div>
     </nav>
+    <div>
+        <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+        <% end %>
+    </div>
     <body>
         <%= yield %>
     </body>

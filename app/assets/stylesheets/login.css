@@ -1,0 +1,14 @@
+div.field {
+    color: black;
+    margin: auto;
+    width: 50%;
+}
+
+.labeltag {
+    color: white;
+}
+
+.submittag {
+    float: right;
+    margin: 20px 30px 1px 1px;
+}

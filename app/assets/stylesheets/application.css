@@ -15,6 +15,12 @@
  *= require_self
  */
 
+ body {
+     /*background-image: url("green_dust.png");*/
+     /*opacity: 0.4;*/
+     /*background-color: #cccccc;*/
+ }
+
 .col-centered {
     float: none;
     margin: 0 auto;
@@ -30,6 +36,12 @@ body {
     }
 }
 
+/*@media only screen and (max-width: 775px) {
+    #modalbutton {
+        display: none;
+    }
+}*/
+
 #WelcomeUser {
     float: right;
     color: white;
@@ -43,18 +55,26 @@ body {
 }
 
 #modalbutton {
-    float: right;
-    margin: 1em;
+    /*margin:0px auto;*/
+    /*text-align: center;*/
+    /*float: left;*/
 }
 
 #passwordWarning {
     color: red;
 }
 
+#decryptButton {
+    background-color: #2bc0b3;
+    border-color: #2bc0b3;
+    color: white;
+    margin: 4px;
+}
+
 .snapshot_box {
     margin: 5px;
     width: 80%;
-    min-height: 60px;
+    min-height: 85px;
     border: solid #e5e5e5 1px;
     border-radius: 8px;
     background-color: white;
@@ -67,8 +87,15 @@ body {
     margin-top: 8px;
 }
 
+.notice {
+    background-color: #fff4a8;
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+}
+
 #chart_holder {
-    width: 90%;
+    width: 95%;
 }
 
 .input_item {
@@ -82,7 +109,7 @@ body {
 
 .navbar-default {
     background-color: #535658;
-    color: #ff0000;
+    /*color: #ff0000;*/
 }
 
 li.navbar-text a {

@@ -1,74 +1,36 @@
-<div>
-    <div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" id="modalbutton" data-toggle="modal" data-target="#myModal">
-            Upload Loan Data
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">Upload Loan Data</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="upload">
-                            <input type="file" id="uploadFile">
-                        </div>
-                        <br/>
-                        <hr/>
-                        <div>
-                            <label>Encryption Password</label><br/>
-                            <input type="password" class="form-control" placeholder="Enter encryption password" id="userkeyEncrypt"/>
-                            <p id="passwordWarning">Choose a
-                                <strong>strong</strong>
-                                password with uppercase, lowercase, numbers, special charcters and plenty of randomness
-                                <br/>
-                                <strong>You must remember this password!</strong>
-                                It cannot be reset or recovered, unlike normal passwords. You should probably write it down.</p>
-                        </div>
-                        <hr/>
-                        <div>
-                            <h4>Upload Preview</h4>
-                            <p id="uploadPreview"></p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="encryptAndUploadToServer" data-dismiss="modal">Send to Server</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div></div>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-8 col-md-6">
 
-        <div class="col-lg-2"></div>
-        <div class="col-lg-4 col-md-6">
-            <div class="center-block snapshot_box">
-            Total Interest you will pay:
-            <br/>
-            <p class="snapshot_numbers" id="total_interest_to_pay"></p>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4 col-md-6">
+                <div class="center-block snapshot_box">
+                    Total Interest you will pay over the life of the loan:
+                    <br/>
+                    <p class="snapshot_numbers" id="total_interest_to_pay"></p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="center-block snapshot_box">
+                    Monthly Payment:
+                    <br/>
+                    <p class="snapshot_numbers" id="monthly_payment"></p>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
         </div>
-        </div>
         <div class="col-lg-4 col-md-6">
-            <div class="center-block snapshot_box">
-                Monthly Payment:
-                <br/>
-                <p class="snapshot_numbers" id="monthly_payment"></p>
+            <div class="center-block">
+                <!-- Button trigger modal -->
+                <button class="btn btn-primary btn-lg" id="modalbutton" data-toggle="modal" data-target="#myModal">
+                    Upload Loan Data
+                </button>
             </div>
         </div>
-        <div class="col-lg-2"></div>
     </div>
-    </div>
+    <!-- end row 1 -->
 
 </div>
 <br/>
@@ -113,5 +75,46 @@
             </div>
         </div>
     </div>
+</div> <!-- end row 2 -->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Upload Loan Data</h4>
+        </div>
+        <div class="modal-body">
+            <div class="upload">
+                <input type="file" id="uploadFile">
+            </div>
+            <br/>
+            <hr/>
+            <div>
+                <label>Encryption Password</label><br/>
+                <input type="password" class="form-control" placeholder="Enter encryption password" id="userkeyEncrypt"/>
+                <p id="passwordWarning">Choose a
+                    <strong>strong</strong>
+                    password with uppercase, lowercase, numbers, special charcters and plenty of randomness
+                    <br/>
+                    <strong>You must remember this password!</strong>
+                    It cannot be reset or recovered, unlike normal passwords. You should probably write it down.</p>
+            </div>
+            <hr/>
+            <div>
+                <h4>Upload Preview</h4>
+                <p id="uploadPreview"></p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="encryptAndUploadToServer" data-dismiss="modal">Send to Server</button>
+        </div>
+    </div>
 </div>
 </div>
+<!-- end modal -->

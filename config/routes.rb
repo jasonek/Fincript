@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
-  get "/", to: "users#index", as: "home"
-  get "/register", to: "users#new", as: "register"
-  get "/login", to: "sessions#new", as: "login"
-  get "/unlock", to: "sessions#unlock", as: "unlock"
-  get "/logout", to: "sessions#destroy", as: "logout" #GET or DELETE request?
-  get "/dashboard", to: "sessions#dashboard", as: "dashboard"
-  get "/sessions/api", to: "sessions#api"
+  get "/", to: "users#index", as: "home" #LANDING PAGE
+  get "/users", to: "users#index", as: "users" #users_path needed for form_for
+  post "/users", to: "users#create"
+  get "/register", to: "users#new", as: "register" #REGISTRATION
   post "/users/save_data", to: "users#save_data", as: "save"
 
-  resources :users
-  resources :sessions
+  get "/sessions", to: "sessions#index", as: "sessions"
+  post "/sessions", to: "sessions#create"
+  get "/login", to: "sessions#new", as: "login" #LOGIN PAGE
+  get "/unlock", to: "sessions#unlock", as: "unlock" #UNLOCK & DECRYPT PAGE
+  get "/logout", to: "sessions#destroy", as: "logout" #GET or DELETE request?
+  get "/dashboard", to: "sessions#dashboard", as: "dashboard"
+  get "/sessions/api", to: "sessions#api" #fetches logged-in user's "data" field to then decrypt and show
+
+
+  # resources :users
+  # resources :sessions
 
   root "users#index"
 end

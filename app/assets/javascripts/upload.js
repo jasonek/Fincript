@@ -23,6 +23,11 @@ $(function() {
         $("#userkeyEncrypt").val('');
         generateUserKey(userCleartextPassword); //saves usable key in data attr
         sendDataToServer( sessionStorage.getItem("cryptoKey") );
+
+        if ( $('.notice').text() !== "" ) {
+            $('.notice').text("");
+        } //clear notice telling user to upload data
+
     })
 
 });
@@ -34,6 +39,7 @@ function sendDataToServer(encryptionKey) {
     console.log("encrypted version: " + encryptedJson);
     var encodedEncryptedJson = btoa(encryptedJson);
     console.log("encoded version: " + encodedEncryptedJson);
+
 
     $.ajax({
         type: "POST",

@@ -1,8 +1,17 @@
 <div>
-    <div>
-        <input type="password" placeholder="Enter decryption password" id="userkey" size="50"/>
+    <div id="makeMarginSpace">
+
     </div>
-    <div>
-        <a href="/dashboard"><input type="button" value="Decrypt" id="decryptButton" href="/dashboard"/></a>
+
+    <div class="container">
+        <div class="background">
+            <div id="usernameDisplay">Enter decryption password for <span id="welcomeUserName"><%= current_user.email %></span></div>
+            <br />
+            <div class="embed-submit-field">
+                <input type="password" placeholder="Decryption password" id="userkey"/>
+                <%= link_to "Decrypt", dashboard_path, :class => 'btn', :id => 'decryptButton' %>
+            </div>
+        </div>
     </div>
+
 </div>

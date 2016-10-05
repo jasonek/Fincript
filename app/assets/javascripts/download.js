@@ -22,6 +22,7 @@ function retrieveDataFromServer(key) {
         sessionStorage.setItem("jsondata", clearText);
         dashboardLoad();
         updateChart();
+        basicMath();
     };
 
     function handleError(error) {
