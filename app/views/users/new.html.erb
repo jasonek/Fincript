@@ -1,28 +1,37 @@
-<h1>Sign Up</h1>
+<div>
+    <div id="makeMarginSpace"></div>
 
-<%= form_for @user do |f| %>
-<% if @user.errors.any? %>
-<div class="error_messages">
-    <h2>Form is invalid</h2>
-    <ul>
-        <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-    </ul>
-</div>
-<% end %>
+    <div class="container">
+        <div class="background">
+            <div class="embed-submit-field">
+                <%= form_for @user do |f| %>
+                <% if @user.errors.any? %>
+                <div class="error_messages">
+                    <h2>Form is invalid</h2>
+                    <ul>
+                        <% @user.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+                <% end %>
 
-<div class="field">
-    <%= f.label :email %><br/>
-    <%= f.text_field :email, placeholder: "Email" %>
+                <div class="field">
+                    <span class="labeltag"><%= f.label :email %></span><br/>
+                    <%= f.text_field :email, placeholder: "Email" %>
+                </div>
+                <div class="field">
+                    <span class="labeltag"><%= f.label :password %></span><br/>
+                    <%= f.password_field :password, placeholder: "Password" %>
+                </div>
+                <div class="field">
+                    <span class="labeltag"><%= f.label :password_confirmation %></span><br/>
+                    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+                </div>
+                <div class="actions btn submittagRegister"><%= f.submit "Sign Up" %></div>
+                <% end %>
+
+            </div>
+        </div>
+    </div>
 </div>
-<div class="field">
-    <%= f.label :password %><br/>
-    <%= f.password_field :password, placeholder: "Password" %>
-</div>
-<div class="field">
-    <%= f.label :password_confirmation %><br/>
-    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-</div>
-<div class="actions"><%= f.submit "Sign Up" %></div>
-<% end %>
