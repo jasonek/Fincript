@@ -2,26 +2,26 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-8 col-md-6">
+        <div class="col-lg-9 col-md-6">
 
-            <div class="col-lg-2"></div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-3 col-md-6">
                 <div class="center-block snapshot_box">
                     Total Interest you will pay over the life of the loan:
                     <br/>
                     <p class="snapshot_numbers" id="total_interest_to_pay"></p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="center-block snapshot_box">
                     Monthly Payment:
                     <br/>
                     <p class="snapshot_numbers" id="monthly_payment"></p>
                 </div>
             </div>
-            <div class="col-lg-2"></div>
+            <div class="col-lg-1"></div>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
             <div class="center-block">
                 <!-- Button trigger modal -->
                 <button class="btn btn-primary btn-lg" id="modalbutton" data-toggle="modal" data-target="#myModal">
@@ -37,14 +37,19 @@
 <br/>
 <br/>
 <div class="row" id="chart_holder">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-8 col-md-6">
+    <div class="col-lg-3">
+<div class="loanNavigator">
+    <ul id="loanList"> <span id='YourLoans'>Your Loans</span>
+    </ul>
+</div>
+    </div>
+    <div class="col-lg-7">
         <div id="graph">
             <canvas id="canvas"></canvas>
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-2">
         <div class="form-list">
             <div>
                 <label>Principal:
