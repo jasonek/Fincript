@@ -41,7 +41,6 @@
 #encryptAndUploadToServer, #modalbutton {
     background-color: #2bc0b3;
     border-color: white;
-
 }
 
 #loanList {
@@ -55,7 +54,8 @@
     font-size: 25px;
     text-decoration: underline;
 }
-ul#loanList > li {
+
+ul#loanList> li {
     cursor: pointer;
     /*list-style-type: none;*/
     font-weight: bold;
