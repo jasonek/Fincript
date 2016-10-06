@@ -1,6 +1,6 @@
 .overlay {
     margin-top: -20px;
-    background: url("green_dust.png");
+    /*background: url("green_dust.png");*/
     background-size: 100% 100%;
     background-position: fixed;
     opacity: 0.8;
@@ -55,7 +55,7 @@
 
 #statssection {
     padding-top: 10px;
-    background: rgba(255, 255, 255, .25);
+    background: rgba(200, 200, 200, .25);
 }
 
 #debtmapimage {
@@ -65,6 +65,7 @@
 .appPreviewImage {
     float: right;
     margin: 10px;
+    border: solid gray 1px;
 }
 
 .row {

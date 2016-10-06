@@ -23,6 +23,7 @@
 body {
     background-color: #EFF8FA;
     overflow: auto;
+    font: Tahoma, Geneva, sans-serif;
 }
 
 @media only screen and (max-width: 800px) {
