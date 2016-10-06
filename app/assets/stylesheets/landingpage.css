@@ -1,0 +1,94 @@
+.overlay {
+    margin-top: -20px;
+    background: url("green_dust.png");
+    background-size: 100% 100%;
+    background-position: fixed;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.previewTextParent {
+    /*position: relative;*/
+}
+
+#previewText {
+    color: black;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    border-radius: 7px;
+}
+
+#makeHeaderSpace {
+    padding-top: 50px;
+}
+
+#makeMiddleSpace {
+    padding-top: 250px;
+}
+
+#appOverview {
+    margin-top: 100px;
+}
+
+.statbox {
+    position: relative;
+    background-color: white;
+    border-radius: 5px;
+    min-height: 120px;
+    margin: 5px 5px 20px 5px;
+}
+
+.debtlist {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.boxtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+}
+
+#statssection {
+    padding-top: 10px;
+    background: rgba(255, 255, 255, .25);
+}
+
+#debtmapimage {
+    margin-bottom: 20px;
+}
+
+.appPreviewImage {
+    float: right;
+    margin: 10px;
+}
+
+.row {
+    box-sizing: border-box;
+}
+
+.calltoactionparent {
+    position: relative;
+    background-color: #1b4ea0;
+    min-height: 300px;
+    color: white;
+    font-size: 34px;
+    text-align: center;
+}
+
+.calltoaction {
+    padding-left: 15%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 991px) {
+    .statbox {
+        max-width: 520px;
+    }
+}

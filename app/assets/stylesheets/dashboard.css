@@ -1,0 +1,45 @@
+.snapshot_box {
+    margin: 5px;
+    width: 80%;
+    min-height: 85px;
+    border: solid #e5e5e5 1px;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+}
+
+.snapshot_numbers {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+#passwordWarning {
+    color: red;
+}
+
+#decryptButton {
+    background-color: #2bc0b3;
+    border-color: #2bc0b3;
+    color: white;
+    margin: 4px;
+}
+
+#chart_holder {
+    width: 95%;
+}
+
+.input_item {
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+.form-list {
+    margin-top: 2em;
+}
+
+#encryptAndUploadToServer, #modalbutton {
+    background-color: #2bc0b3;
+    border-color: white;
+
+}
