@@ -55,7 +55,7 @@
     text-decoration: underline;
 }
 
-ul#loanList> li {
+ol#loanList> li {
     cursor: pointer;
     /*list-style-type: none;*/
     font-weight: bold;

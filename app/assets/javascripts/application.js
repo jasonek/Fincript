@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 
+//= require jquery_readyselector
 //= require bootstrap.min
 //= require moment.min.js
 //= require sjcl.js

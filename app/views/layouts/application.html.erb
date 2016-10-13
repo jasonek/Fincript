@@ -33,7 +33,7 @@
         <div class="notice"><%= flash[:notice] %></div>
         <% end %>
     </div>
-    <body>
+    <body class="<%= controller_name %> <%= action_name %>">
         <%= yield %>
     </body>
 </html>

@@ -1,6 +1,5 @@
 
 function updateChart() {
-    console.log("in updateChart");
     var barChartData = {
         labels: labells,
         datasets: [{

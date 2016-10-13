@@ -1,10 +1,5 @@
-function dashboardLoad() {
-    createLoanList();
-    dashboardWrite(1);
-}
 
 function createLoanList() {
-    console.log("in dashboard load");
     var jsonData = sessionStorage.getItem("jsondata");
     var jsonData = JSON.parse(jsonData);
     //Load the JSON object into an array
@@ -25,7 +20,6 @@ function createLoanList() {
 }
 
 function dashboardWrite(index) {
-    console.log("in dashboardWrite");
     var jsonData = sessionStorage.getItem("jsondata");
     var jsonData = JSON.parse(jsonData);
 
@@ -48,6 +42,11 @@ function dashboardWrite(index) {
     $('#compounds_per_year').val(activeLoan(i)["compounds per year"]);
     $('#loan_years').val(activeLoan(i)["years of loan"]);
     $('#terminal_date').val(activeLoan(i)["maturity date"]);
+}
+
+function dashboardLoad() {
+    createLoanList();
+    dashboardWrite(1);
 }
 
 $(document).on('click', '#1', function() {

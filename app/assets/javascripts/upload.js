@@ -1,4 +1,4 @@
-$(function() {
+$(function() { //on page load
 
     var fileInput = document.getElementById('uploadFile');
 
@@ -30,7 +30,7 @@ $(function() {
 
     })
 
-});
+}); //end on page load
 
 function sendDataToServer(encryptionKey) {
     console.log(encryptionKey);
