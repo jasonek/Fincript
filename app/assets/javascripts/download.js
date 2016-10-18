@@ -1,6 +1,6 @@
-$(function() {
+$(document).ready(function() {
         retrieveDataFromServer( sessionStorage.getItem("cryptoKey") );
-    }) //end OnLoad
+    })
 
 function retrieveDataFromServer(key) {
     console.log("key is: " + key);
@@ -20,8 +20,8 @@ function retrieveDataFromServer(key) {
         var clearText = sjcl.decrypt(key, decodedJson);
         console.log("clear text: "+ clearText);
         sessionStorage.setItem("jsondata", clearText);
-        dashboardLoad();
-        updateChart();
+        Dashboard.load();
+        Dashboard.update();
         basicMath();
     };
 

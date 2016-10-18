@@ -21,7 +21,7 @@
     font-weight: 500;
     padding-bottom: 20%;
     border-radius: 7px;
-    background-color: white;
+    /*background-color: white;*/
     margin: 10px;
 }
 
@@ -30,11 +30,19 @@
 }
 
 #makeMiddleSpace {
-    padding-top: 250px;
+    padding-top: 200px;
 }
 
 #appOverview {
     margin-top: 100px;
+}
+
+#ZKexplanation {
+        background-color: #005aed;
+        margin: 0px;
+        color: white;
+        font-size: 26px;
+        padding: 100px;
 }
 
 .boxtitle {
@@ -67,7 +75,8 @@
 }
 
 #statssection {
-    padding-top: 10px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     background: rgba(200, 200, 200, .25);
 }
 

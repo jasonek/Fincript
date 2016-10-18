@@ -52,11 +52,6 @@ var chartDataInterest = function() {
     }
 };
 
-
-// $(document).on('ready', function() {
-//     updateChart();
-// });
-
 $('.sessions.dashboard').on('ready', function(){
-    updateChart();
+    Dashboard.update();
 })
