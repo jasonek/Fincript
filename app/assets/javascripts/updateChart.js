@@ -37,30 +37,30 @@
 //     });
 // };
 
-$(document).ready( function() {
-    $('#principal').on('change', function(event) {
-        Dashboard.update();
-        basicMath();
-    });
-
-    $('#interest_rate').on('change', function(event) {
-        Dashboard.update();
-        basicMath();
-    });
-
-    $('#compounds_per_year').on('change', function(event) {
-        Dashboard.update();
-        basicMath();
-    });
-
-    $('#loan_years').on('change', function(event) {
-        Dashboard.update();
-        basicMath();
-    });
-
-    $('#terminal_date').on('change', function(event) {
-        Dashboard.update();
-        basicMath();
-    });
-
-});
+// $(document).ready( function() {
+//     $('#principal').on('change', function(event) {
+//         Dashboard.update();
+//         basicMath();
+//     });
+//
+//     $('#interest_rate').on('change', function(event) {
+//         Dashboard.update();
+//         basicMath();
+//     });
+//
+//     $('#compounds_per_year').on('change', function(event) {
+//         Dashboard.update();
+//         basicMath();
+//     });
+//
+//     $('#loan_years').on('change', function(event) {
+//         Dashboard.update();
+//         basicMath();
+//     });
+//
+//     $('#terminal_date').on('change', function(event) {
+//         Dashboard.update();
+//         basicMath();
+//     });
+//
+// });

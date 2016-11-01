@@ -42,32 +42,32 @@
 //     $('#compounds_per_year').val(activeLoan(i)["compounds per year"]);
 //     $('#loan_years').val(activeLoan(i)["years of loan"]);
 //     $('#terminal_date').val(activeLoan(i)["maturity date"]);
-// }
-
-Dashboard.load()
-
-$(document).on('click', '#1', function() {
-    Dashboard.write(this["id"]);
-    Dashboard.update();
-    basicMath();
-});
-$(document).on('click', '#2', function() {
-    Dashboard.write(this["id"]);
-    Dashboard.update();
-    basicMath();
-});
-$(document).on('click', '#3', function() {
-    Dashboard.write(this["id"]);
-    Dashboard.update();
-    basicMath();
-});
-$(document).on('click', '#4', function() {
-    Dashboard.write(this["id"]);
-    Dashboard.update();
-    basicMath();
-});
-$(document).on('click', '#5', function() {
-    Dashboard.write(this["id"]);
-    Dashboard.update();
-    basicMath();
-});
+// // }
+//
+// Dashboard.load();
+//
+// $(document).on('click', '#1', function() {
+//     Dashboard.write(this["id"]);
+//     Dashboard.update();
+//     basicMath();
+// });
+// $(document).on('click', '#2', function() {
+//     Dashboard.write(this["id"]);
+//     Dashboard.update();
+//     basicMath();
+// });
+// $(document).on('click', '#3', function() {
+//     Dashboard.write(this["id"]);
+//     Dashboard.update();
+//     basicMath();
+// });
+// $(document).on('click', '#4', function() {
+//     Dashboard.write(this["id"]);
+//     Dashboard.update();
+//     basicMath();
+// });
+// $(document).on('click', '#5', function() {
+//     Dashboard.write(this["id"]);
+//     Dashboard.update();
+//     basicMath();
+// });

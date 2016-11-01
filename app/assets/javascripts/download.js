@@ -1,8 +1,8 @@
 $(document).ready(function() {
-        retrieveDataFromServer( sessionStorage.getItem("cryptoKey") );
-    })
+        downloadDataFromServer( sessionStorage.getItem("cryptoKey") );
+    });
 
-function retrieveDataFromServer(key) {
+function downloadDataFromServer(key) {
     console.log("key is: " + key);
 
     $.ajax({
@@ -11,7 +11,7 @@ function retrieveDataFromServer(key) {
         async: true,
         success: getEncryptedJson,
         error: handleError
-    })
+    });
 
     function getEncryptedJson(encodedJson) {
         console.log("encoded: " + encodedJson);
@@ -23,11 +23,11 @@ function retrieveDataFromServer(key) {
         Dashboard.load();
         Dashboard.update();
         basicMath();
-    };
+    }
 
     function handleError(error) {
         console.log("Error");
         console.log(error.responseText);
-    };
+    }
 
 }

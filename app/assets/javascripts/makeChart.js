@@ -12,7 +12,7 @@ function findTodayInArray(dateArray) {
         }
     }
     //TODO: Handle when i dont find a date
-};
+}
 
 
 
@@ -25,7 +25,7 @@ var chartDataPrincipal = function() {
     var dateSpecificPrincipal = function(i) {
         var startingMonthIndex = findTodayInArray(dateArray);
         return dateArray[startingMonthIndex + i][1];
-    }
+    };
 
     if ($('#principal').val() === null || $('#principal').val() === "") {
         return zeroes_data;
@@ -42,7 +42,7 @@ var chartDataInterest = function() {
     var dateSpecificInterest = function(i) {
         var starting_month = findTodayInArray(dateArray);
         return dateArray[starting_month + i][2];
-    }
+    };
 
     if ($('#interest_rate').val() === null || $('#interest_rate').val() === "") {
         return zeroes_data;
@@ -54,4 +54,4 @@ var chartDataInterest = function() {
 
 $('.sessions.dashboard').on('ready', function(){
     Dashboard.update();
-})
+});

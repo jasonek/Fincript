@@ -6,7 +6,7 @@ function pmt(rate,nper,pv) {
     pmt = rate / (pvif - 1) * -(pv * pvif);
 
     return pmt;
-};
+}
 
 function makeDateArray(loan_duration){
     var terminal_date = $('#terminal_date').val();
@@ -18,10 +18,10 @@ function makeDateArray(loan_duration){
     var current_date = moment(starting_date);
     while (current_date <= last_date) {
         dateArr.push(moment(current_date).format('YYYY MM DD'));
-        current_date = moment(current_date).add(1,'months')
+        current_date = moment(current_date).add(1,'months');
     }
     return dateArr;
-};
+}
 
 function computeSchedule(principal, interest_rate, compounds_per_year, loan_duration, payment) {
     var schedule = [];
@@ -36,10 +36,10 @@ function computeSchedule(principal, interest_rate, compounds_per_year, loan_dura
         principal = principal.toFixed(2);
         var row = [i, principal>0?(principal<payment?principal:payment):0, interest>0?interest:0, remaining>0?remaining:0, dates[i]];
         schedule.push(row);
-        remaining -= principal
+        remaining -= principal;
     }
     return schedule;
-};
+}
 
 function getDataSet() {
     var output = {};
@@ -57,4 +57,4 @@ function getDataSet() {
                                        years,
                                        payment );
     return output;
-};
+}

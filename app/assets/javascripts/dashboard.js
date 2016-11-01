@@ -4,46 +4,41 @@ Dashboard = {
         Dashboard.write(1); //first time loading the file, use loan 1 to populate chart
     },
 
-    createLoanList: function() {
+    getJsonFromSessionStorage: function() {
         var jsonData = sessionStorage.getItem("jsondata");
-        var jsonData = JSON.parse(jsonData);
+        jsonData = JSON.parse(jsonData);
 
         //Load the JSON object into an array:
         var loanArray = [];
         for (var key in jsonData) {
             if (jsonData.hasOwnProperty(key)) {
-                var val = jsonData[key]
+                var val = jsonData[key];
                 loanArray.push(val);
             }
         }
+        return loanArray;
+    },
+
+    createLoanList: function() {
+        var loanDataArray = Dashboard.getJsonFromSessionStorage();
 
         //create a list of loans on the left hand side of the web page
-        for (var j = 0; j < loanArray.length; j++) {
+        for (var j = 0; j < loanDataArray.length; j++) {
             $('#loanList').append($("<li>", {
                 id: j + 1,
-                text: loanArray[j]["name"]
+                text: loanDataArray[j].name
             }));
         }
     },
 
     write: function(index) {
-
-        var jsonData = sessionStorage.getItem("jsondata");
-        var jsonData = JSON.parse(jsonData);
-
-        var loanArray = [];
-        for (var key in jsonData) {
-            if (jsonData.hasOwnProperty(key)) {
-                var val = jsonData[key]
-                loanArray.push(val);
-            }
-        }
+        var loanDataArray = Dashboard.getJsonFromSessionStorage();
 
         var i = index;
         var activeLoan = function(i) {
             i = i - 1; //to account for index 0 being first position
-            return loanArray[i];
-        }
+            return loanDataArray[i];
+        };
 
         $('#principal').val(activeLoan(i)["principal"]);
         $('#interest_rate').val(activeLoan(i)["interest rate"]);
@@ -89,4 +84,4 @@ Dashboard = {
             }
         });
     }
-}
+};

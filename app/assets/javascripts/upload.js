@@ -5,15 +5,16 @@ $(function() { //on page load
     fileInput.addEventListener('change', function(e) {
         var file = fileInput.files[0];
         var textType = /text.*/;
+        var reader;
 
         if (file.type.match(textType)) {
-            var reader = new FileReader();
+            reader = new FileReader();
             reader.onload = function(e) {
                 sessionStorage.setItem("jsondata", reader.result);
                 $('#uploadPreview').append(reader.result);
-            }
+            };
         } else {
-            fileDisplayArea.innerText = "File not supported!"
+            fileDisplayArea.innerText = "File not supported!";
         }
         reader.readAsText(file);
     });
@@ -28,13 +29,13 @@ $(function() { //on page load
             $('.notice').text("");
         } //clear notice telling user to upload data
 
-    })
+    });
 
 }); //end on page load
 
 function sendDataToServer(encryptionKey) {
     console.log(encryptionKey);
-    var clearTextJson = sessionStorage.getItem("jsondata")
+    var clearTextJson = sessionStorage.getItem("jsondata");
     var encryptedJson = sjcl.encrypt(encryptionKey, clearTextJson);
     console.log("encrypted version: " + encryptedJson);
     var encodedEncryptedJson = btoa(encryptedJson);
@@ -56,5 +57,5 @@ function sendDataToServer(encryptionKey) {
     function handleError(error) {
         console.log("Error");
         console.log(error.responseText);
-    };
+    }
 }
