@@ -1,0 +1,42 @@
+{
+    "loan1": {
+        "name": "Direct Subsidized Stafford",
+        "principal": "4344.09",
+        "interest rate": "4.9",
+        "compounds per year": "12",
+        "years of loan": "10",
+        "maturity date": "2019-04-25"
+    },
+    "loan2": {
+        "name": "Wells Fargo 2012",
+        "principal": "8102.43",
+        "interest rate": "6.1",
+        "compounds per year": "12",
+        "years of loan": "10",
+        "maturity date": "2022-06-20"
+    },
+    "loan3": {
+        "name": "Direct Unubsidized Stafford",
+        "principal": "7576.45",
+        "interest rate": "6.55",
+        "compounds per year": "12",
+        "years of loan": "15",
+        "maturity date": "2029-12-19"
+    },
+    "loan4": {
+        "name": "Wells Fargo 2014",
+        "principal": "5135.78",
+        "interest rate": "7.1",
+        "compounds per year": "12",
+        "years of loan": "10",
+        "maturity date": "2024-10-01"
+    },
+    "loan5": {
+        "name": "Wells Fargo 2013",
+        "principal": "3729.12",
+        "interest rate": "6.9",
+        "compounds per year": "12",
+        "years of loan": "15",
+        "maturity date": "2028-02-25"
+    }
+}
