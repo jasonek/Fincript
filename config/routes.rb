@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
   get "/login", to: "sessions#new", as: "login" #LOGIN PAGE
   get "/unlock", to: "sessions#unlock", as: "unlock" #UNLOCK & DECRYPT PAGE
-  delete "/logout", to: "sessions#destroy", as: "logout" #GET or DELETE request?
+  get "/logout", to: "sessions#destroy", as: "logout" #GET or DELETE request?
   get "/dashboard", to: "sessions#dashboard", as: "dashboard"
   get "/sessions/api", to: "sessions#api" #fetches logged-in user's "data" field to then decrypt and show
 
