@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_filter :authorize, except: [:new, :create, :destroy]
+  before_action :authorize, except: [:new, :create, :destroy]
 
   def new #sends to Login page
   end
