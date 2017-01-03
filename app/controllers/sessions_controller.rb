@@ -10,7 +10,12 @@ class SessionsController < ApplicationController
   def create #creates new session if user & password are legit
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+      if params[:remember_me]
+        cookies.permanent[:remember_token] = user.remember_token
+      else
+        cookies[:remember_token] = user.remember_token
+      end
+      
       redirect_to unlock_path
     else
       flash.now.alert = "Email or password is invalid"
@@ -28,7 +33,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    cookies.delete(:remember_token)
     reset_session
     redirect_to root_url, notice: "Logged out. Please close the browser window now"
   end

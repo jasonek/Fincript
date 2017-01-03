@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927132052) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20170103213759) do
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",           null: false
@@ -24,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160927132052) do
     t.string   "encrypted_email_iv"
     t.string   "encrypted_email_salt"
     t.text     "data"
+    t.string   "remember_token"
   end
 
 end

@@ -20,7 +20,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     get login_path
     assert_response :success
     post '/login', params: { email: @user.email, password: 'abc123' }
-    assert_operator session[:user_id], :>, 0
+    assert_not cookies['remember_token'].empty?
     assert_redirected_to '/unlock'
     follow_redirect!
     assert_template 'sessions/unlock'
@@ -31,7 +31,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", dashboard_path
     assert_select "a[href=?]", logout_path
     get logout_path
-    assert_not session[:user_id]
+    assert cookies['remember_token'].blank?
     assert_redirected_to root_url
     # Simulate a user clicking logout in a second window.
     get logout_path

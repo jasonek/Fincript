@@ -8,7 +8,9 @@ user_1:
   id: 1
   email: jason@jason.com
   password_digest: $2a$10$RBg0jZ/80kAWEy4XGiH4l.dc7GhlKr/w5.6s2idZxXQUjh9bhsdoq
+  remember_token: UGm7T8ZtnlS0IJmdjvWAMw
 user_2:
   id: 2
   email: kai@kai.com
   password_digest: $2a$10$PuD4visv/.hrf/1YBKTWN.7bVW8PdsBNw5HXpqvmkfAosrJwGoUfq
+  remember_token: btqV0bho6BjWcrBfGDJb6Q

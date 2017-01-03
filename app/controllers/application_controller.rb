@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   private
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by(remember_token: cookies[:remember_token]) if cookies[:remember_token]
   end
   helper_method :current_user
 
