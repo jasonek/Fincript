@@ -5,7 +5,7 @@
         <div class="background">
             <div class="embed-submit-field">
                 <!-- #not working off a model here dont need form for -->
-                <%= form_tag sessions_path do %>
+                <%= form_tag login_path do %>
                 <div class="field">
                     <span class="labeltag"><%= label_tag :email %></span><br/>
                     <%= text_field_tag :email, params[:email]%>

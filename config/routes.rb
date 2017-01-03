@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   post "/users/save_data", to: "users#save_data", as: "save"
 
   get "/sessions", to: "sessions#index", as: "sessions"
-  get "/login", to: "sessions#new", as: "login" #LOGIN PAGE
-  post "/login", to: "sessions#create"
+  get "/login", to: "sessions#new"#, as: "login" #LOGIN PAGE
+  post "/login", to: "sessions#create"#, as: "login"
   get "/unlock", to: "sessions#unlock", as: "unlock" #UNLOCK & DECRYPT PAGE
   get "/logout", to: "sessions#destroy", as: "logout" #GET or DELETE request?
   get "/dashboard", to: "sessions#dashboard", as: "dashboard"
