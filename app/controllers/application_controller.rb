@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   private
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id] #because this will likely be called often per request, we cache as an instance variable to make faster
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user
 
