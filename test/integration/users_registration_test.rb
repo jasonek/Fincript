@@ -11,4 +11,17 @@ class UsersRegistrationTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/new'
   end
+
+  test "valid registration information" do
+    get register_path
+    assert_difference 'User.count', 1 do
+      post users_path, params: { user: { email: "valid_user@test.com",
+                                         password:              "abc123",
+                                         password_confirmation: "abc123" } }
+    end
+    assert_redirected_to dashboard_url
+    follow_redirect!
+    # assert_template '/dashboard'
+  end
+
 end
