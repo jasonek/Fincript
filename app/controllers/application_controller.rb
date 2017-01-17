@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    redirect_to login_url, alter: "You do not have access" if current_user.nil?
+    redirect_to login_url, alter: "You do not have access" if @current_user.nil?
   end
 end
