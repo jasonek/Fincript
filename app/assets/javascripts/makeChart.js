@@ -15,8 +15,18 @@ function findTodayInArray(dateArray) {
 }
 
 
+var orderedMonths = function(){
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var today = new Date();
+  var currentMonth = today.getMonth();
+  var soonerMonths = months.slice(currentMonth);
+  var laterMonths = months.slice(0, currentMonth);
+  var orderedArray = soonerMonths.concat(laterMonths);
+  return orderedArray;
+};
 
-var labells = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// var labells = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var labells = orderedMonths();
 var zeroes_data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 var chartDataPrincipal = function() {
