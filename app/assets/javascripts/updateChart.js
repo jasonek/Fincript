@@ -40,27 +40,27 @@
 // $(document).ready( function() {
 //     $('#principal').on('change', function(event) {
 //         Dashboard.update();
-//         loanSnapshot();
+//         calc.loanSnapshot();
 //     });
 //
 //     $('#interest_rate').on('change', function(event) {
 //         Dashboard.update();
-//         loanSnapshot();
+//         calc.loanSnapshot();
 //     });
 //
 //     $('#compounds_per_year').on('change', function(event) {
 //         Dashboard.update();
-//         loanSnapshot();
+//         calc.loanSnapshot();
 //     });
 //
 //     $('#loan_years').on('change', function(event) {
 //         Dashboard.update();
-//         loanSnapshot();
+//         calc.loanSnapshot();
 //     });
 //
 //     $('#terminal_date').on('change', function(event) {
 //         Dashboard.update();
-//         loanSnapshot();
+//         calc.loanSnapshot();
 //     });
 //
 // });

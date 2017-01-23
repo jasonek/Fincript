@@ -49,25 +49,25 @@
 // $(document).on('click', '#1', function() {
 //     Dashboard.write(this["id"]);
 //     Dashboard.update();
-//     loanSnapshot();
+//     calc.loanSnapshot();
 // });
 // $(document).on('click', '#2', function() {
 //     Dashboard.write(this["id"]);
 //     Dashboard.update();
-//     loanSnapshot();
+//     calc.loanSnapshot();
 // });
 // $(document).on('click', '#3', function() {
 //     Dashboard.write(this["id"]);
 //     Dashboard.update();
-//     loanSnapshot();
+//     calc.loanSnapshot();
 // });
 // $(document).on('click', '#4', function() {
 //     Dashboard.write(this["id"]);
 //     Dashboard.update();
-//     loanSnapshot();
+//     calc.loanSnapshot();
 // });
 // $(document).on('click', '#5', function() {
 //     Dashboard.write(this["id"]);
 //     Dashboard.update();
-//     loanSnapshot();
+//     calc.loanSnapshot();
 // });

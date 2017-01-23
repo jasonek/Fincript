@@ -12335,7 +12335,7 @@ sjcl.hash.sha256.prototype = {
 // n is the compounds per period (when monthly n=12)
 // t is the number of years of the loan
 
-function calcMonthlyPayment(principal, interest_rate, compounds_per_year, years) {
+function calc.monthlyPayment(principal, interest_rate, compounds_per_year, years) {
     var P = principal;
     var r = interest_rate/100;
     var n = compounds_per_year;
@@ -12347,7 +12347,7 @@ function calcMonthlyPayment(principal, interest_rate, compounds_per_year, years)
     return numerator/(1-denominator);
     };
 
-function calcTotalInterestToPay(principal, interest_rate, compounds_per_year, years) {
+function calccalc.totalInterestToPay(principal, interest_rate, compounds_per_year, years) {
     var P = principal;
     var r = interest_rate/100;
     var n = compounds_per_year;
@@ -12360,12 +12360,12 @@ function calcTotalInterestToPay(principal, interest_rate, compounds_per_year, ye
     return (numerator * n * t )/denominator;
 }
 
-function loanSnapshot() {
-    var mnthlypmt = calcMonthlyPayment($('#principal').val(),$('#interest_rate').val(),$('#compounds_per_year').val(),$('#loan_years').val());
+function calc.loanSnapshot() {
+    var mnthlypmt = calc.monthlyPayment($('#principal').val(),$('#interest_rate').val(),$('#compounds_per_year').val(),$('#loan_years').val());
     var mnthlypmt = mnthlypmt.toFixed(2);
     $("#monthly_payment").text("$"+mnthlypmt);
 
-    var totalIntToPay = calcTotalInterestToPay($('#principal').val(),$('#interest_rate').val(),$('#compounds_per_year').val(),$('#loan_years').val());
+    var totalIntToPay = calccalc.totalInterestToPay($('#principal').val(),$('#interest_rate').val(),$('#compounds_per_year').val(),$('#loan_years').val());
     var principal = $('#principal').val();
     var display_int = (totalIntToPay-principal).toFixed(2)
     $("#total_interest_to_pay").text("$"+display_int);
@@ -27958,27 +27958,27 @@ function dashboardWrite(index) {
 $(document).on('click', '#1', function() {
     dashboardWrite(this["id"]);
     updateChart();
-    loanSnapshot();
+    calc.loanSnapshot();
 });
 $(document).on('click', '#2', function() {
     dashboardWrite(this["id"]);
     updateChart();
-    loanSnapshot();
+    calc.loanSnapshot();
 });
 $(document).on('click', '#3', function() {
     dashboardWrite(this["id"]);
     updateChart();
-    loanSnapshot();
+    calc.loanSnapshot();
 });
 $(document).on('click', '#4', function() {
     dashboardWrite(this["id"]);
     updateChart();
-    loanSnapshot();
+    calc.loanSnapshot();
 });
 $(document).on('click', '#5', function() {
     dashboardWrite(this["id"]);
     updateChart();
-    loanSnapshot();
+    calc.loanSnapshot();
 });
 $(function() {
         retrieveDataFromServer( sessionStorage.getItem("cryptoKey") );
@@ -28004,7 +28004,7 @@ function retrieveDataFromServer(key) {
         sessionStorage.setItem("jsondata", clearText);
         dashboardLoad();
         updateChart();
-        loanSnapshot();
+        calc.loanSnapshot();
     };
 
     function handleError(error) {
@@ -28133,27 +28133,27 @@ function updateChart() {
 $(document).ready( function() {
     $('#principal').on('change', function(event) {
         updateChart();
-        loanSnapshot();
+        calc.loanSnapshot();
     });
 
     $('#interest_rate').on('change', function(event) {
         updateChart();
-        loanSnapshot();
+        calc.loanSnapshot();
     });
 
     $('#compounds_per_year').on('change', function(event) {
         updateChart();
-        loanSnapshot();
+        calc.loanSnapshot();
     });
 
     $('#loan_years').on('change', function(event) {
         updateChart();
-        loanSnapshot();
+        calc.loanSnapshot();
     });
 
     $('#terminal_date').on('change', function(event) {
         updateChart();
-        loanSnapshot();
+        calc.loanSnapshot();
     });
 
 });
@@ -28207,7 +28207,7 @@ function sendDataToServer(encryptionKey) {
         success: function() {
             dashboardLoad();
             updateChart();
-            loanSnapshot();
+            calc.loanSnapshot();
         },
         error: handleError
     });
