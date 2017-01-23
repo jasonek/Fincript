@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
       else
         cookies[:remember_token] = user.remember_token
       end
-      
       redirect_to unlock_path
     else
       flash.now.alert = "Email or password is invalid"
