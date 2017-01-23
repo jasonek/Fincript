@@ -49,7 +49,7 @@ function sendDataToServer(encryptionKey) {
         success: function() {
             dashboardLoad();
             updateChart();
-            basicMath();
+            loanSnapshot();
         },
         error: handleError
     });

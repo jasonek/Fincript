@@ -12360,7 +12360,7 @@ function calcTotalInterestToPay(principal, interest_rate, compounds_per_year, ye
     return (numerator * n * t )/denominator;
 }
 
-function basicMath() {
+function loanSnapshot() {
     var mnthlypmt = calcMonthlyPayment($('#principal').val(),$('#interest_rate').val(),$('#compounds_per_year').val(),$('#loan_years').val());
     var mnthlypmt = mnthlypmt.toFixed(2);
     $("#monthly_payment").text("$"+mnthlypmt);
@@ -27958,27 +27958,27 @@ function dashboardWrite(index) {
 $(document).on('click', '#1', function() {
     dashboardWrite(this["id"]);
     updateChart();
-    basicMath();
+    loanSnapshot();
 });
 $(document).on('click', '#2', function() {
     dashboardWrite(this["id"]);
     updateChart();
-    basicMath();
+    loanSnapshot();
 });
 $(document).on('click', '#3', function() {
     dashboardWrite(this["id"]);
     updateChart();
-    basicMath();
+    loanSnapshot();
 });
 $(document).on('click', '#4', function() {
     dashboardWrite(this["id"]);
     updateChart();
-    basicMath();
+    loanSnapshot();
 });
 $(document).on('click', '#5', function() {
     dashboardWrite(this["id"]);
     updateChart();
-    basicMath();
+    loanSnapshot();
 });
 $(function() {
         retrieveDataFromServer( sessionStorage.getItem("cryptoKey") );
@@ -28004,7 +28004,7 @@ function retrieveDataFromServer(key) {
         sessionStorage.setItem("jsondata", clearText);
         dashboardLoad();
         updateChart();
-        basicMath();
+        loanSnapshot();
     };
 
     function handleError(error) {
@@ -28133,27 +28133,27 @@ function updateChart() {
 $(document).ready( function() {
     $('#principal').on('change', function(event) {
         updateChart();
-        basicMath();
+        loanSnapshot();
     });
 
     $('#interest_rate').on('change', function(event) {
         updateChart();
-        basicMath();
+        loanSnapshot();
     });
 
     $('#compounds_per_year').on('change', function(event) {
         updateChart();
-        basicMath();
+        loanSnapshot();
     });
 
     $('#loan_years').on('change', function(event) {
         updateChart();
-        basicMath();
+        loanSnapshot();
     });
 
     $('#terminal_date').on('change', function(event) {
         updateChart();
-        basicMath();
+        loanSnapshot();
     });
 
 });
@@ -28207,7 +28207,7 @@ function sendDataToServer(encryptionKey) {
         success: function() {
             dashboardLoad();
             updateChart();
-            basicMath();
+            loanSnapshot();
         },
         error: handleError
     });

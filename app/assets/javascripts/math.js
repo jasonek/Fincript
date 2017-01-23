@@ -30,7 +30,7 @@ function calcTotalInterestToPay(principal, interest_rate, compounds_per_year, ye
     return (numerator * n * t )/denominator;
 }
 
-function basicMath() {
+function loanSnapshot() {
     var mnthlypmt = calcMonthlyPayment($('#principal').val(),$('#interest_rate').val(),$('#compounds_per_year').val(),$('#loan_years').val());
     var mnthlypmt = mnthlypmt.toFixed(2);
     $("#monthly_payment").text("$"+mnthlypmt);

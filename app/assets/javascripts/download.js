@@ -22,7 +22,7 @@ function downloadDataFromServer(key) {
         sessionStorage.setItem("jsondata", clearText);
         Dashboard.load();
         Dashboard.update();
-        basicMath();
+        loanSnapshot();
     }
 
     function handleError(error) {
