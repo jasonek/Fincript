@@ -3,7 +3,6 @@ require 'test_helper'
 class UsersLoginTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:user_1)
-    # @user = User.create(email: 'john@john.com', password: 'abc123', password_confirmation: 'abc123')
   end
 
   test "login with invalid information" do
@@ -19,7 +18,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   test "login with valid information followed by logout" do
     get login_path
     assert_response :success
-    post '/login', params: { email: @user.email, password: 'abc123' }
+    post '/login', params: { session: { email: @user.email, password: 'abc123' } }
     assert_not cookies['remember_token'].empty?
     assert_redirected_to '/unlock'
     follow_redirect!

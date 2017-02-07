@@ -7,7 +7,7 @@ class UsersDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "dashboard display" do
-    post '/login', params: { email: @user.email, password: 'abc123' }
+    post '/login', params: { session: { email: @user.email, password: 'abc123' } }
     get dashboard_path
     assert :success
     assert_template 'sessions/dashboard'

@@ -10,9 +10,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # byebug
     if @user.save
-      session[:user_id] = @user.id #log in new users when they register successfully
+      log_in @user
       redirect_to '/dashboard', notice: "Upload loan data to get started."
     else
       render "new"

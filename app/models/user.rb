@@ -13,4 +13,18 @@ class User < ApplicationRecord
     end while User.exists?(column => self[column])
   end
 
+  def remember
+    self.remember_token = User.new_token
+    update_attribute(:remember_token, User.token(remember_token))
+  end
+
+  def authenticated?(remember_token)
+    return false if remember_token.nil?
+    BCrypt::Password.new(remember_token).is_password?(remember_token)
+  end
+
+  def forget
+    update_attribute(:remember_token, nil)
+  end
+
 end

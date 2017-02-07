@@ -8,9 +8,10 @@ class SessionsController < ApplicationController
   end
 
   def create #creates new session if user & password are legit
-    user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
-      if params[:remember_me]
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      log_in user
+      if params[:session][:remember_me]
         cookies.permanent[:remember_token] = user.remember_token
       else
         cookies[:remember_token] = user.remember_token
@@ -32,6 +33,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out if logged_in?
     cookies.delete(:remember_token)
     reset_session
     redirect_to root_url, notice: "Logged out. Please close the browser window now"
